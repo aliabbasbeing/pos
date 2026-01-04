@@ -2,7 +2,7 @@
 // Core configuration and session bootstrap
 
 // COMPANY DETAILS
-define('COMPANY_NAME', 'Alfah Tech International SMC PVT LTD');
+define('COMPANY_NAME', 'Alpah Tech Int SMC PVT LTD');
 define('COMPANY_TAGLINE', 'Advanced Poultry Health Solutions');
 define('COMPANY_CONTACTS', json_encode([
     'Lahore' => ['phone' => '(042) 36-28-1111', 'whatsapp' => '0337-961-6356'],

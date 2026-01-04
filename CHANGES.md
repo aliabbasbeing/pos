@@ -7,7 +7,7 @@
 
 ### 1. Company Name Update ✓
 
-**Change**: "Alfah Tech International" → "Alfah Tech International SMC PVT LTD"
+**Change**: "Alfah Tech International" → "Alpah Tech Int SMC PVT LTD"
 
 **Files Modified**:
 - `config.php` - Updated COMPANY_NAME constant

@@ -9,7 +9,7 @@ Alfah Tech International
 
 ### After:
 ```
-Alfah Tech International SMC PVT LTD
+Alpah Tech Int SMC PVT LTD
 ```
 
 **Visible In:**

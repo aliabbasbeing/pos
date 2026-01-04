@@ -4,7 +4,7 @@
 This document provides instructions for applying the terminology updates to your existing POS database.
 
 ## Changes Applied
-1. **Company Name**: Updated from "Alfah Tech International" to "Alfah Tech International SMC PVT LTD"
+1. **Company Name**: Updated from "Alfah Tech International" to "Alpah Tech Int SMC PVT LTD"
 2. **Category Name**: Changed from "neutralisation" to "neutration" 
 3. **Product Form**: Changed from "Oral Solution" to "Liquid Solution"
 
