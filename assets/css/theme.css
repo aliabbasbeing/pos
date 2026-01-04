@@ -1,0 +1,117 @@
+:root{
+  --color-primary: #1E40AF;
+  --color-secondary: #0EA5E9;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-lightbg-start: #667eea;
+  --color-lightbg-end: #764ba2;
+  --glass-bg: rgba(255,255,255,0.92);
+  --glass-border: rgba(255,255,255,0.35);
+  --card-radius: 12px;
+  --muted: #6B7280;
+  --panel-shadow: 0 12px 30px rgba(2,6,23,0.12);
+}
+
+/* Page background (same as dashboard) */
+body {
+  background: linear-gradient(135deg, var(--color-lightbg-start) 0%, var(--color-lightbg-end) 100%);
+  min-height: 100vh;
+  color: #0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Glass cards used everywhere */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+}
+
+/* Generic card */
+.card, .panel {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+/* Stat cards special look */
+.stat-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.9));
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: var(--panel-shadow);
+}
+
+/* Buttons */
+.btn-primary{
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+}
+.btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,165,233,0.12); }
+
+.btn-secondary{
+  background: #f3f4f6;
+  color:#111827;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(15,23,42,0.04);
+}
+.btn-danger{
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+}
+.btn-warning{
+  background: var(--color-warning);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+}
+
+/* Inputs */
+.input {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.06);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  outline: none;
+}
+.input:focus {
+  box-shadow: 0 6px 18px rgba(14,165,233,0.08);
+  border-color: rgba(14,165,233,0.6);
+}
+
+/* Small helpers */
+.icon-sm { font-size: 0.95rem; }
+.pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+@keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:.7 } }
+
+/* Table headers */
+.table thead th {
+  background: linear-gradient(90deg,var(--color-primary), #1E3A8A);
+  color: #fff;
+}
+
+/* Utility colors */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-danger { color: var(--color-danger); }
+
+/* Responsive tweaks */
+@media (max-width: 768px){
+  .glass-card { padding: 0.75rem; border-radius: 10px; }
+  .stat-card { padding: 1rem; }
+}

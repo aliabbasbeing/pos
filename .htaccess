@@ -1,0 +1,17 @@
+# Optional: Apache configuration for clean URLs and security
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default timezone (backup if not set in PHP)
+php_value date.timezone "Asia/Karachi"
+
+# Error pages (optional)
+# ErrorDocument 404 /404.php
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
