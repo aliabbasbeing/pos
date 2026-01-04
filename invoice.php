@@ -229,10 +229,8 @@ body {
              
             </div>
             
-            <!-- Islamabad - All on one line -->
+            <!-- Islamabad - Phone only, no address -->
             <div class="compact-contact">
-              <strong>📍 Islamabad:</strong> <?= e($addresses[1]) ?> | 
-
               <strong>📱:</strong> <?= e($contacts['Islamabad']['whatsapp']) ?>
             </div>
           </div>
