@@ -270,6 +270,20 @@ body {
 
   <!-- Bill To / From Section -->
   <div class="grid grid-cols-2 gap-4 mb-3 relative z-10">
+    <!-- Bill From -->
+    <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-3 rounded-lg border-l-4 border-secondary">
+      <h3 class="font-heading font-semibold text-secondary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
+        <span>🏢</span> From
+      </h3>
+      <div class="space-y-0.5 text-[11px]">
+        <div class="font-bold text-sm text-gray-800"><?= e(COMPANY_NAME) ?></div>
+        <div class="text-gray-700">
+          <span class="font-medium">Phone:</span> <?= e($contacts['Lahore']['phone']) ?> | 
+          <span class="font-medium">WhatsApp:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
+        </div>
+      </div>
+    </div>
+
     <!-- Bill To -->
     <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 rounded-lg border-l-4 border-primary">
       <h3 class="font-heading font-semibold text-primary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
@@ -289,23 +303,6 @@ body {
             <span class="font-medium">Address:</span> <?= e($order['customer_address']) ?>
           </div>
         <?php endif; ?>
-      </div>
-    </div>
-
-    <!-- Bill From -->
-    <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-3 rounded-lg border-l-4 border-secondary">
-      <h3 class="font-heading font-semibold text-secondary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
-        <span>🏢</span> From
-      </h3>
-      <div class="space-y-0.5 text-[11px]">
-        <div class="font-bold text-sm text-gray-800"><?= e(COMPANY_NAME) ?></div>
-        <div class="text-gray-700">
-          <span class="font-medium">Address:</span> <?= e($addresses[0]) ?>
-        </div>
-        <div class="text-gray-700">
-          <span class="font-medium">Phone:</span> <?= e($contacts['Lahore']['phone']) ?> | 
-          <span class="font-medium">WhatsApp:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
-        </div>
       </div>
     </div>
   </div>
