@@ -40,6 +40,8 @@ CREATE TABLE orders (
   invoice_number VARCHAR(50) NOT NULL UNIQUE,
   customer_id INT,
   total_amount DECIMAL(10,2) NOT NULL,
+  advance_amount DECIMAL(10,2) DEFAULT 0,
+  remaining_amount DECIMAL(10,2) DEFAULT 0,
   payment_method VARCHAR(50),
   order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   status VARCHAR(20) DEFAULT 'completed',

@@ -207,8 +207,7 @@ body {
     <div class="flex items-start justify-between">
       <!-- Company Info -->
       <div class="flex-1">
-        <div class="flex items-center gap-3 mb-2">
-          <img src="assets/images/logo.png" class="h-14" alt="<?= e(COMPANY_NAME) ?>">
+        <div class="mb-2">
           <div>
             <h1 class="font-heading text-2xl font-bold text-primary leading-tight"><?= e(COMPANY_NAME) ?></h1>
             <p class="text-xs text-gray-600 italic"><?= e(COMPANY_TAGLINE) ?></p>
@@ -365,6 +364,24 @@ body {
                 Rs <?= number_format($grand_total, 2) ?>
               </span>
             </div>
+            <?php 
+            $advance_amount = (float)($order['advance_amount'] ?? 0);
+            $remaining_amount = (float)($order['remaining_amount'] ?? 0);
+            if ($advance_amount > 0): 
+            ?>
+            <div class="flex justify-between items-center mt-2 pt-2 border-t border-blue-300">
+              <span class="font-semibold text-sm text-blue-600">💰 Advance Paid:</span>
+              <span class="font-bold text-base text-blue-600">
+                Rs <?= number_format($advance_amount, 2) ?>
+              </span>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="font-semibold text-sm text-orange-600">⏳ Remaining:</span>
+              <span class="font-bold text-base text-orange-600">
+                Rs <?= number_format($remaining_amount, 2) ?>
+              </span>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>

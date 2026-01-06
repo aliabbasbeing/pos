@@ -59,6 +59,8 @@ CREATE TABLE `orders` (
   `invoice_number` varchar(50) NOT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `total_amount` decimal(10,2) NOT NULL,
+  `advance_amount` decimal(10,2) DEFAULT 0,
+  `remaining_amount` decimal(10,2) DEFAULT 0,
   `payment_method` varchar(50) DEFAULT NULL,
   `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` varchar(20) DEFAULT 'completed',

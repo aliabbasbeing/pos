@@ -359,6 +359,7 @@ tailwind.config = {
             <option value="">All Categories</option>
             <option value="antibiotics" <?= $category==='antibiotics'?'selected':'' ?>>Antibiotics</option>
             <option value="neutration" <?= $category==='neutration'?'selected':'' ?>>Neutration</option>
+            <option value="feed_premix_powder" <?= $category==='feed_premix_powder'?'selected':'' ?>>Feed Premix Powder</option>
           </select>
         </div>
         <div class="flex gap-2">
@@ -565,6 +566,7 @@ tailwind.config = {
               <option value="">-- Select Category --</option>
               <option value="antibiotics">Antibiotics</option>
               <option value="neutration">Neutration</option>
+              <option value="feed_premix_powder">Feed Premix Powder</option>
             </select>
           </div>
           

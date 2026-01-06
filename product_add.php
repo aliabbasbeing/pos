@@ -89,6 +89,7 @@ tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA
           <select name="category" class="input" required>
             <option value="antibiotics">Antibiotics</option>
             <option value="neutration">Neutration</option>
+            <option value="feed_premix_powder">Feed Premix Powder</option>
           </select>
           <?php if (!empty($errors['category'])): ?><div class="error"><?= e($errors['category']) ?></div><?php endif; ?>
         </div>
