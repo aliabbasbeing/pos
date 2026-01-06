@@ -43,12 +43,10 @@ $is_paid = ($order['status'] ?? 'completed') === 'completed';
 <meta charset="utf-8">
 <title>Invoice <?= e($order['invoice_number']) ?> - <?= e(COMPANY_NAME) ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA5E9', success:'#10B981', warning:'#F59E0B', danger:'#EF4444', lightbg:'#F0F9FF', dark:'#1E3A8A' }, fontFamily:{ sans:['Inter'], heading:['Poppins'] } } } }
-</script>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/tailwind.min.css">
+<script src="assets/js/html2pdf.bundle.min.js"></script>
 <style>
 @media print {
   @page {
