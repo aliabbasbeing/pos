@@ -358,7 +358,8 @@ tailwind.config = {
           <select name="category" class="input w-full">
             <option value="">All Categories</option>
             <option value="antibiotics" <?= $category==='antibiotics'?'selected':'' ?>>Antibiotics</option>
-            <option value="neutralisation" <?= $category==='neutralisation'?'selected':'' ?>>Neutralisation</option>
+            <option value="neutration" <?= $category==='neutration'?'selected':'' ?>>Neutration</option>
+            <option value="feed_premix_powder" <?= $category==='feed_premix_powder'?'selected':'' ?>>Feed Premix Powder</option>
           </select>
         </div>
         <div class="flex gap-2">
@@ -564,7 +565,8 @@ tailwind.config = {
             >
               <option value="">-- Select Category --</option>
               <option value="antibiotics">Antibiotics</option>
-              <option value="neutralisation">Neutralisation</option>
+              <option value="neutration">Neutration</option>
+              <option value="feed_premix_powder">Feed Premix Powder</option>
             </select>
           </div>
           
@@ -579,7 +581,7 @@ tailwind.config = {
             >
               <option value="">-- Select Form --</option>
               <option value="Water Soluble Powder">Water Soluble Powder</option>
-              <option value="Oral Solution">Oral Solution</option>
+              <option value="Liquid Solution">Liquid Solution</option>
             </select>
           </div>
           

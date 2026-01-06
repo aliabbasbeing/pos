@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'previ
         $payment_method = in_array($_POST['payment_method'] ?? '', ['cash','card','bank_transfer'], true) 
             ? $_POST['payment_method'] : 'cash';
         $tax_percent = (float)($_POST['tax'] ?? 0);
+        $advance_amount = max(0, (float)($_POST['advance_amount'] ?? 0));
 
         $use_new_customer = (int)($_POST['use_new_customer'] ?? 0) === 1;
         $new_name = trim($_POST['new_name'] ?? '');
@@ -153,6 +154,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'previ
                     }
                 }
 
+                // Calculate remaining amount
+                $remaining_amount = max(0, $grand_total - $advance_amount);
+
                 // Store in session for confirmation
                 $_SESSION['pending_order'] = [
                     'items' => $items,
@@ -160,6 +164,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'previ
                     'tax_percent' => $tax_percent,
                     'tax_amount' => $tax_amount,
                     'grand_total' => $grand_total,
+                    'advance_amount' => $advance_amount,
+                    'remaining_amount' => $remaining_amount,
                     'payment_method' => $payment_method,
                     'customer_info' => $customer_info,
                     'customer_id' => $customer_id,
@@ -208,6 +214,22 @@ require_once __DIR__ . '/includes/header.php';
 .category-badge {
     font-size: 9px;
     padding: 2px 6px;
+}
+/* Advance payment emphasis */
+.advance-wrap {
+    border: 2px solid #2563eb;
+    background: linear-gradient(135deg, #e0ecff 0%, #f5f9ff 100%);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.18);
+}
+.advance-wrap .label {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+.advance-wrap input {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
 }
 </style>
 
@@ -435,6 +457,13 @@ require_once __DIR__ . '/includes/header.php';
           <option value="bank_transfer">🏦 Bank Transfer</option>
         </select>
         
+        <div class="mb-4 p-4 advance-wrap border border-blue-200 rounded-lg">
+          <label class="label mb-2 uppercase tracking-wide">💰 Advance Payment (Optional)</label>
+          <input type="number" id="advance_amount" class="input focus:ring-2 focus:ring-primary" 
+            placeholder="Enter advance amount" min="0" step="0.01" value="0">
+          <p class="text-xs text-gray-700 mt-2 font-semibold">Leave 0 for full payment. Enter advance to track remaining balance.</p>
+        </div>
+        
         <form id="checkoutForm" action="" method="post">
           <?= csrf_input() ?>
           <input type="hidden" name="action" value="preview">
@@ -442,6 +471,7 @@ require_once __DIR__ . '/includes/header.php';
           <input type="hidden" name="customer_id" id="customerInput">
           <input type="hidden" name="payment_method" id="paymentInput">
           <input type="hidden" name="tax" id="taxInput">
+          <input type="hidden" name="advance_amount" id="advanceInput">
           <input type="hidden" name="use_new_customer" id="useNewCustomer">
           <input type="hidden" name="new_name" id="newCustomerName">
           <input type="hidden" name="new_phone" id="newCustomerPhone">
@@ -704,6 +734,7 @@ $(function () {
     $('#cartInput').val(JSON.stringify(cart));
     $('#paymentInput').val($('#payment_method').val());
     $('#taxInput').val($('#tax').val());
+    $('#advanceInput').val($('#advance_amount').val() || '0');
 
     const mode = $('input[name="customer_mode"]:checked').val();
     if (mode === 'new') {

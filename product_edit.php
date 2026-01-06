@@ -97,7 +97,8 @@ tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA
           <label class="label">Category</label>
           <select name="category" class="input" required>
             <option value="antibiotics" <?= $product['category']==='antibiotics'?'selected':'' ?>>Antibiotics</option>
-            <option value="neutralisation" <?= $product['category']==='neutralisation'?'selected':'' ?>>Neutralisation</option>
+            <option value="neutration" <?= $product['category']==='neutration'?'selected':'' ?>>Neutration</option>
+            <option value="feed_premix_powder" <?= $product['category']==='feed_premix_powder'?'selected':'' ?>>Feed Premix Powder</option>
           </select>
           <?php if (!empty($errors['category'])): ?><div class="error"><?= e($errors['category']) ?></div><?php endif; ?>
         </div>
@@ -105,7 +106,7 @@ tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA
           <label class="label">Form</label>
           <select name="form" class="input" required>
             <option value="Water Soluble Powder" <?= $product['form']==='Water Soluble Powder'?'selected':'' ?>>Water Soluble Powder</option>
-            <option value="Oral Solution" <?= $product['form']==='Oral Solution'?'selected':'' ?>>Oral Solution</option>
+            <option value="Liquid Solution" <?= $product['form']==='Liquid Solution'?'selected':'' ?>>Liquid Solution</option>
           </select>
           <?php if (!empty($errors['form'])): ?><div class="error"><?= e($errors['form']) ?></div><?php endif; ?>
         </div>
