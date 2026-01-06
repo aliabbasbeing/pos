@@ -13,7 +13,7 @@ define('COMPANY_ADDRESSES', json_encode([
 
 // SITE CONSTANTS
 define('SITE_NAME', 'Vet Green Pharma POS');
-define('BASE_URL', ''); // If hosted in subfolder, e.g., '/alfah-pos'
+define('BASE_URL', ''); // If hosted in subfolder, e.g., '/vetgreen-pos'
 
 // DATABASE - EDIT THESE FOR YOUR ENV
 define('DB_HOST', 'localhost');
