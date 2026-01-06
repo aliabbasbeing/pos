@@ -39,7 +39,7 @@
 
     <div class="border-t border-gray-200 mt-6 pt-4 text-center text-sm text-gray-500">
       <p>&copy; <?= date('Y') ?> <?= e(COMPANY_NAME) ?>. All rights reserved.</p>
-      <p class="text-xs mt-1">Powered by Alfah POS System v1.0</p>
+      <p class="text-xs mt-1">Powered by Vet Green Pharma POS System v1.0</p>
     </div>
   </div>
 </footer>
@@ -181,8 +181,8 @@ function copyToClipboard(text) {
   });
 }
 
-console.log('%c🚀 Alfah POS System', 'color: #1E40AF; font-size: 20px; font-weight: bold;');
-console.log('%cVersion 1.0 | Developed for Alpah Tech Int SMC PVT LTD', 'color: #0EA5E9; font-size: 12px;');
+console.log('%c🚀 Vet Green Pharma POS System', 'color: #1E40AF; font-size: 20px; font-weight: bold;');
+console.log('%cVersion 1.0 | Developed for Vet Green Pharma PVT LTD', 'color: #0EA5E9; font-size: 12px;');
 </script>
 
 </body>
