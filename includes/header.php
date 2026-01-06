@@ -1,7 +1,7 @@
 <?php
 // Ensure session and authentication
 if (!defined('PAGE_TITLE')) {
-    define('PAGE_TITLE', 'Alfah POS');
+    define('PAGE_TITLE', 'Vet Green Pharma POS');
 }
 
 // Get current page for active menu
