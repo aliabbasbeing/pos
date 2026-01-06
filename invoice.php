@@ -205,15 +205,22 @@ body {
   <!-- Header Section -->
   <div class="invoice-header relative z-10">
     <div class="flex items-start justify-between">
-      <!-- Company Info -->
-      <div class="flex-1">
-        <div class="mb-2">
-          <div>
-            <h1 class="font-heading text-2xl font-bold text-primary leading-tight"><?= e(COMPANY_NAME) ?></h1>
-            <p class="text-xs text-gray-600 italic"><?= e(COMPANY_TAGLINE) ?></p>
-          </div>
-        </div>
-        
+      <?php
+  // Escape everything first, then insert a <br> before SMC…
+  $company_name = e(COMPANY_NAME);
+  $company_name = preg_replace('/\s+(SMC\b.*)$/i', '<br>$1', $company_name);
+?>
+<!-- Company Info -->
+<div class="flex-1">
+  <div class="mb-2">
+    <div>
+      <h1 class="font-heading text-2xl font-bold text-primary leading-tight">
+        <?= $company_name ?>
+      </h1>
+      <p class="text-xs text-gray-600 italic"><?= e(COMPANY_TAGLINE) ?></p>
+    </div>
+  </div>
+
         <div class="text-[10px] text-gray-700 leading-relaxed">
           <?php 
           $addresses = json_decode(COMPANY_ADDRESSES, true);
