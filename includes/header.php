@@ -213,10 +213,7 @@ tailwind.config = {
       <div class="flex items-center gap-3">
         <img src="assets/images/logo.png" class="h-10 w-10 rounded" alt="<?= e(COMPANY_NAME) ?> Logo">
         <div class="hidden sm:block">
-<?php
-  $company_name = str_replace('International', 'Int', e(COMPANY_NAME));
-?>
-<div class="font-heading font-semibold text-lg leading-tight"><?= $company_name ?></div>
+<div class="font-heading font-semibold text-lg leading-tight"><?= e(COMPANY_NAME) ?></div>
           <div class="text-xs opacity-90 leading-tight"><?= e(COMPANY_TAGLINE) ?></div>
         </div>
       </div>
