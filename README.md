@@ -1,7 +1,7 @@
 ````markdown
 # Alfah POS (Core PHP)
 
-Alfah Tech International — Advanced Poultry Health Solutions  
+Alpah Tech Int SMC PVT LTD — Advanced Poultry Health Solutions  
 A simple Point of Sale (POS) system built with pure Core PHP, Tailwind CSS, Chart.js, jQuery and FPDF/TCPDF for invoice generation.
 
 This repository is intentionally framework-free and uses PDO (prepared statements), password_hash, CSRF protection and sessions.

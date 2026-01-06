@@ -63,13 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'confi
             // Create order
             $invoice_number = generate_invoice_number($pdo);
             $stmt = $pdo->prepare("
-                INSERT INTO orders (invoice_number, customer_id, total_amount, payment_method, status) 
-                VALUES (?, ?, ?, ?, 'completed')
+                INSERT INTO orders (invoice_number, customer_id, total_amount, advance_amount, remaining_amount, payment_method, status) 
+                VALUES (?, ?, ?, ?, ?, ?, 'completed')
             ");
             $stmt->execute([
                 $invoice_number,
                 $customer_id ?: null,
                 $pending['grand_total'],
+                $pending['advance_amount'] ?? 0,
+                $pending['remaining_amount'] ?? 0,
                 $pending['payment_method']
             ]);
             $order_id = (int)$pdo->lastInsertId();
@@ -190,6 +192,16 @@ require_once __DIR__ . '/includes/header.php';
             <span class="text-xl font-bold text-primary">Grand Total:</span>
             <span class="text-3xl font-bold text-success"><?= format_currency($pending['grand_total']) ?></span>
           </div>
+          <?php if (($pending['advance_amount'] ?? 0) > 0): ?>
+          <div class="flex justify-between pt-3 border-t border-gray-300">
+            <span class="text-base font-semibold text-blue-600">💰 Advance Paid:</span>
+            <span class="text-xl font-bold text-blue-600"><?= format_currency($pending['advance_amount']) ?></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-base font-semibold text-orange-600">⏳ Remaining:</span>
+            <span class="text-xl font-bold text-orange-600"><?= format_currency($pending['remaining_amount']) ?></span>
+          </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>

@@ -207,8 +207,7 @@ body {
     <div class="flex items-start justify-between">
       <!-- Company Info -->
       <div class="flex-1">
-        <div class="flex items-center gap-3 mb-2">
-          <img src="assets/images/logo.png" class="h-14" alt="<?= e(COMPANY_NAME) ?>">
+        <div class="mb-2">
           <div>
             <h1 class="font-heading text-2xl font-bold text-primary leading-tight"><?= e(COMPANY_NAME) ?></h1>
             <p class="text-xs text-gray-600 italic"><?= e(COMPANY_TAGLINE) ?></p>
@@ -229,10 +228,8 @@ body {
              
             </div>
             
-            <!-- Islamabad - All on one line -->
+            <!-- Islamabad - Phone only, no address -->
             <div class="compact-contact">
-              <strong>📍 Islamabad:</strong> <?= e($addresses[1]) ?> | 
-
               <strong>📱:</strong> <?= e($contacts['Islamabad']['whatsapp']) ?>
             </div>
           </div>
@@ -272,6 +269,20 @@ body {
 
   <!-- Bill To / From Section -->
   <div class="grid grid-cols-2 gap-4 mb-3 relative z-10">
+    <!-- Bill From -->
+    <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-3 rounded-lg border-l-4 border-secondary">
+      <h3 class="font-heading font-semibold text-secondary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
+        <span>🏢</span> From
+      </h3>
+      <div class="space-y-0.5 text-[11px]">
+        <div class="font-bold text-sm text-gray-800"><?= e(COMPANY_NAME) ?></div>
+        <div class="text-gray-700">
+          <span class="font-medium">Phone:</span> <?= e($contacts['Lahore']['phone']) ?> | 
+          <span class="font-medium">WhatsApp:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
+        </div>
+      </div>
+    </div>
+
     <!-- Bill To -->
     <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-3 rounded-lg border-l-4 border-primary">
       <h3 class="font-heading font-semibold text-primary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
@@ -291,23 +302,6 @@ body {
             <span class="font-medium">Address:</span> <?= e($order['customer_address']) ?>
           </div>
         <?php endif; ?>
-      </div>
-    </div>
-
-    <!-- Bill From -->
-    <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-3 rounded-lg border-l-4 border-secondary">
-      <h3 class="font-heading font-semibold text-secondary text-[11px] uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
-        <span>🏢</span> From
-      </h3>
-      <div class="space-y-0.5 text-[11px]">
-        <div class="font-bold text-sm text-gray-800"><?= e(COMPANY_NAME) ?></div>
-        <div class="text-gray-700">
-          <span class="font-medium">Address:</span> <?= e($addresses[0]) ?>
-        </div>
-        <div class="text-gray-700">
-          <span class="font-medium">Phone:</span> <?= e($contacts['Lahore']['phone']) ?> | 
-          <span class="font-medium">WhatsApp:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
-        </div>
       </div>
     </div>
   </div>
@@ -370,6 +364,24 @@ body {
                 Rs <?= number_format($grand_total, 2) ?>
               </span>
             </div>
+            <?php 
+            $advance_amount = (float)($order['advance_amount'] ?? 0);
+            $remaining_amount = (float)($order['remaining_amount'] ?? 0);
+            if ($advance_amount > 0): 
+            ?>
+            <div class="flex justify-between items-center mt-2 pt-2 border-t border-blue-300">
+              <span class="font-semibold text-sm text-blue-600">💰 Advance Paid:</span>
+              <span class="font-bold text-base text-blue-600">
+                Rs <?= number_format($advance_amount, 2) ?>
+              </span>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="font-semibold text-sm text-orange-600">⏳ Remaining:</span>
+              <span class="font-bold text-base text-orange-600">
+                Rs <?= number_format($remaining_amount, 2) ?>
+              </span>
+            </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>

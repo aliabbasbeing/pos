@@ -88,7 +88,8 @@ tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA
           <label class="label">Category</label>
           <select name="category" class="input" required>
             <option value="antibiotics">Antibiotics</option>
-            <option value="neutralisation">Neutralisation</option>
+            <option value="neutration">Neutration</option>
+            <option value="feed_premix_powder">Feed Premix Powder</option>
           </select>
           <?php if (!empty($errors['category'])): ?><div class="error"><?= e($errors['category']) ?></div><?php endif; ?>
         </div>
@@ -96,7 +97,7 @@ tailwind.config = { theme:{ extend:{ colors:{ primary:'#1E40AF', secondary:'#0EA
           <label class="label">Form</label>
           <select name="form" class="input" required>
             <option value="Water Soluble Powder">Water Soluble Powder</option>
-            <option value="Oral Solution">Oral Solution</option>
+            <option value="Liquid Solution">Liquid Solution</option>
           </select>
           <?php if (!empty($errors['form'])): ?><div class="error"><?= e($errors['form']) ?></div><?php endif; ?>
         </div>

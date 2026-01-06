@@ -182,7 +182,7 @@ function copyToClipboard(text) {
 }
 
 console.log('%c🚀 Alfah POS System', 'color: #1E40AF; font-size: 20px; font-weight: bold;');
-console.log('%cVersion 1.0 | Developed for Alfah Tech International', 'color: #0EA5E9; font-size: 12px;');
+console.log('%cVersion 1.0 | Developed for Alpah Tech Int SMC PVT LTD', 'color: #0EA5E9; font-size: 12px;');
 </script>
 
 </body>
