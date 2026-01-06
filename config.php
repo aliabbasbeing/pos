@@ -2,30 +2,28 @@
 // Core configuration and session bootstrap
 
 // COMPANY DETAILS
-define('COMPANY_NAME', 'Alpah Tech Int SMC PVT LTD');
-define('COMPANY_TAGLINE', 'Advanced Poultry Health Solutions');
+define('COMPANY_NAME', 'Vet Green Pharma PVT LTD');
+define('COMPANY_TAGLINE', 'Professional Veterinary Solutions');
 define('COMPANY_CONTACTS', json_encode([
-    'Lahore' => ['phone' => '(042) 36-28-1111', 'whatsapp' => '0337-961-6356'],
-    'Islamabad' => ['phone' => '(051) 111-241-111', 'whatsapp' => '0335-166-1111'],
+    'Lahore' => ['phone' => '03335721301', 'whatsapp' => '03335721301'],
 ]));
 define('COMPANY_ADDRESSES', json_encode([
-    '17-A Allama Iqbal Road, Cantt. Lahore',
-    'House No. 43, Street No. 37 I-8/2 Markaz Islamabad',
+    '237/2 Main Labrti, Gullberg III, Lahore',
 ]));
 
 // SITE CONSTANTS
-define('SITE_NAME', 'Alfah POS');
-define('BASE_URL', ''); // If hosted in subfolder, e.g., '/alfah-pos'
+define('SITE_NAME', 'Vet Green Pharma POS');
+define('BASE_URL', ''); // If hosted in subfolder, e.g., '/vetgreen-pos'
 
 // DATABASE - EDIT THESE FOR YOUR ENV
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'alfah_pos');
+define('DB_NAME', 'vetgreen_pos');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
 
 // SECURITY
-define('SESSION_NAME', 'alfahpos_sess');
+define('SESSION_NAME', 'vetgreenpos_sess');
 define('SESSION_TIMEOUT', 1800); // 30 minutes
 
 // ERROR DISPLAY (disable in production)

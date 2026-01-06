@@ -1,10 +1,10 @@
 // Main JS for POS interactions (requires jQuery)
 $(function () {
   const CSRF = window.CSRF || '';
-  let cart = JSON.parse(localStorage.getItem('alfah_cart') || '[]');
+  let cart = JSON.parse(localStorage.getItem('vetgreen_cart') || '[]');
 
   function saveCart() {
-    localStorage.setItem('alfah_cart', JSON.stringify(cart));
+    localStorage.setItem('vetgreen_cart', JSON.stringify(cart));
   }
 
   function renderSearchResults(items) {

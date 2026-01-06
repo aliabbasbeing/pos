@@ -206,9 +206,8 @@ body {
   <div class="invoice-header relative z-10">
     <div class="flex items-start justify-between">
       <?php
-  // Escape everything first, then insert a <br> before SMC…
+  // Escape company name - no special formatting needed for Vet Green Pharma
   $company_name = e(COMPANY_NAME);
-  $company_name = preg_replace('/\s+(SMC\b.*)$/i', '<br>$1', $company_name);
 ?>
 <!-- Company Info -->
 <div class="flex-1">
@@ -228,16 +227,13 @@ body {
           ?>
           
           <div class="space-y-1">
-            <!-- Lahore - All on one line -->
+            <!-- Company Address and Contact -->
             <div class="compact-contact">
-              <strong>📍 Lahore:</strong> <?= e($addresses[0]) ?> | 
-              <strong>☎:</strong> <?= e($contacts['Lahore']['phone']) ?> 
-             
+              <strong>📍 Address:</strong> <?= e($addresses[0]) ?>
             </div>
             
-            <!-- Islamabad - Phone only, no address -->
             <div class="compact-contact">
-              <strong>📱:</strong> <?= e($contacts['Islamabad']['whatsapp']) ?>
+              <strong>📱 WhatsApp/Contact:</strong> <?= e($contacts['Lahore']['whatsapp']) ?>
             </div>
           </div>
         </div>
@@ -284,8 +280,7 @@ body {
       <div class="space-y-0.5 text-[11px]">
         <div class="font-bold text-sm text-gray-800"><?= e(COMPANY_NAME) ?></div>
         <div class="text-gray-700">
-          <span class="font-medium">Phone:</span> <?= e($contacts['Lahore']['phone']) ?> | 
-          <span class="font-medium">WhatsApp:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
+          <span class="font-medium">WhatsApp/Contact:</span> <?= e($contacts['Lahore']['whatsapp']) ?>
         </div>
       </div>
     </div>
