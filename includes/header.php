@@ -29,38 +29,20 @@ try {
 <meta name="description" content="<?= e(COMPANY_NAME) ?> - <?= e(COMPANY_TAGLINE) ?>">
 <link rel="icon" type="image/png" href="assets/images/logo.png">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts (Local) -->
+<link rel="stylesheet" href="assets/css/fonts.css">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#1E40AF',
-        secondary: '#0EA5E9',
-        success: '#10B981',
-        warning: '#F59E0B',
-        danger: '#EF4444',
-        lightbg: '#F0F9FF',
-        dark: '#1E3A8A',
-      },
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        heading: ['Poppins', 'ui-sans-serif', 'system-ui']
-      }
-    }
-  }
-}
-</script>
+<!-- FontAwesome (Local) -->
+<link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+<!-- Tailwind CSS (Local) -->
+<link rel="stylesheet" href="assets/css/tailwind.min.css">
 
 <!-- Custom Styles -->
 <link rel="stylesheet" href="assets/css/style.css">
 
-<!-- jQuery (if needed) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery (Local) -->
+<script src="assets/js/jquery-3.6.0.min.js"></script>
 
 <style>
 /* Global Animations */

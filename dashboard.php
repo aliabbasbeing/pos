@@ -660,8 +660,8 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 </div>
 
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Chart.js (Local) -->
+<script src="assets/js/chart.min.js"></script>
 <script>
 const ctx = document.getElementById('weeklyChart').getContext('2d');
 const chart = new Chart(ctx, {
